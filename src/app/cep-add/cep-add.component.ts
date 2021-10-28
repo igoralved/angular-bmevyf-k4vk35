@@ -12,6 +12,7 @@ export class CepAddComponent implements OnInit {
   ceps = this.cepbankservice.getCeps();
 
   checkoutform = this.formbuilder.group({
+    id: '',
     cep: '',
     logradouro: '',
     complemento: '',
@@ -71,8 +72,5 @@ export class CepAddComponent implements OnInit {
     return true;
   }
 
-
-  addCep(){
-    
-  }
+  addCep() {}
 }
