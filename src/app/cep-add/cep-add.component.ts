@@ -14,6 +14,14 @@ export class CepAddComponent implements OnInit {
   checkoutform = this.formbuilder.group({
     cep: '',
     logradouro: '',
+    complemento: '',
+    bairro: '',
+    localidade: '',
+    uf: '',
+    ibge: '',
+    gia: '',
+    ddd: '',
+    siafi: '',
   });
 
   constructor(
@@ -61,5 +69,10 @@ export class CepAddComponent implements OnInit {
       }
     }
     return true;
+  }
+
+
+  addCep(){
+    
   }
 }

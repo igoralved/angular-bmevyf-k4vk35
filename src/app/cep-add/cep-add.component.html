@@ -1,1 +1,10 @@
 <h2>Register a CEP</h2>
+
+<form [formGroup]="checkoutform" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="cep"> Id </label>
+    <input id="cep" type="text" name="cep" #cep />
+  </div>
+
+  <button class="button" (click)="addCep()">Search</button>
+</form>
