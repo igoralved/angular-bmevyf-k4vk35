@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CepbankService } from '../cepbank.service';
-import { Cep } from '../ceps';
+import { Cep, ceps } from '../ceps';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-cep-add',
@@ -10,10 +11,24 @@ import { Cep } from '../ceps';
 export class CepAddComponent implements OnInit {
   ceps = this.cepbankservice.getCeps();
 
-  constructor(private cepbankservice: CepbankService) {}
+  checkoutform = this.formbuilder.group({
+    cep: '',
+    logradouro: '',
+  });
+
+  constructor(
+    private cepbankservice: CepbankService,
+    private formbuilder: FormBuilder
+  ) {}
 
   ngOnInit() {}
 
+  onSubmit(): void {
+    // Process checkout data here
+    //this.ceps = this.cepbankService.clearCeps();
+    console.warn('The CEP has been added', this.checkoutform.value);
+    this.checkoutform.reset();
+  }
 
   valido(cep: Cep) {
     if (cep.campo.length != 8) {
@@ -47,9 +62,4 @@ export class CepAddComponent implements OnInit {
     }
     return true;
   }
-
-
-
-
-
 }
