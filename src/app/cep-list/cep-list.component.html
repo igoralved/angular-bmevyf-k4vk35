@@ -1,0 +1,11 @@
+<p>cep-list works!</p>
+
+<h2>CEPS</h2>
+
+<div *ngFor="let cep of ceps">
+  <h3 *ngIf="valido(cep)">
+    <a [title]="cep.campo" [routerLink]="['/ceps', cep.id]">
+      {{ cep.campo }}
+    </a>
+  </h3>
+</div>

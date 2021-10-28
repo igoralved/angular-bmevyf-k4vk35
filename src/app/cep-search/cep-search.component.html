@@ -1,0 +1,16 @@
+<h3>Search a CEP</h3>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="cep"> Id </label>
+    <input id="cep" type="text" name="cep" #cep />
+  </div>
+
+  <button class="button" (click)="getCep(cep.value)">Search</button>
+</form>
+
+<h3></h3>
+
+<form>
+  <button class="button" [routerLink]="['/add']">Add CEP</button>
+</form>
