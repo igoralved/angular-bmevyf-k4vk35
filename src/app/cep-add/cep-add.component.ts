@@ -11,7 +11,7 @@ import { FormBuilder } from '@angular/forms';
 export class CepAddComponent implements OnInit {
   ceps = this.cepbankservice.getCeps();
 
-  checkoutForm = this.formbuilder.group({
+  checkoutForm = this.formBuilder.group({
     id: '',
     cep: '',
     logradouro: '',
@@ -27,7 +27,7 @@ export class CepAddComponent implements OnInit {
 
   constructor(
     private cepbankservice: CepbankService,
-    private formbuilder: FormBuilder
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit() {}
