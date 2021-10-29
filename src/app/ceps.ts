@@ -8,6 +8,7 @@ export interface Cep {
   uf: string;
   ibge: string;
   gia: string;
+  ddd: string;
   siafi: string;
 }
 
@@ -22,6 +23,7 @@ export const ceps = [
     uf: 'SP',
     ibge: '3550308',
     gia: '1004',
+    ddd: '11',
     siafi: '7107',
   },
   {
@@ -34,6 +36,7 @@ export const ceps = [
     uf: 'nenhum',
     ibge: '0000000',
     gia: '0000',
+    ddd: '00',
     siafi: '0000',
   },
   {
@@ -46,6 +49,7 @@ export const ceps = [
     uf: 'RS',
     ibge: '11223345',
     gia: '2000',
+    ddd: '12',
     siafi: '7800',
   },
 ];

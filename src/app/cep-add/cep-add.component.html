@@ -1,3 +1,46 @@
 <h3>Register a CEP</h3>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()"></form>
+<form (ngSubmit)="onSubmit()">
+  <h3></h3>
+  <div>
+    <label for="cep">campo</label>
+    <input id="cep1" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">logradouro</label>
+    <input id="cep2" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">complemento</label>
+    <input id="cep3" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">bairro</label>
+    <input id="cep4" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">localidade</label>
+    <input id="cep5" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">uf</label>
+    <input id="cep6" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">ibge</label>
+    <input id="cep7" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">gia</label>
+    <input id="cep8" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">ddd</label>
+    <input id="cep9" type="text" name="cep" #cep />
+  </div>
+  <div>
+    <label for="cep">siafi</label>
+    <input id="cepa" type="text" name="cep" #cep />
+  </div>
+  <button class="button">Register</button>
+</form>

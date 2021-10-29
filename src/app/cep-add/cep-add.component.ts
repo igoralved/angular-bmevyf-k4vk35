@@ -11,14 +11,15 @@ import { FormBuilder } from '@angular/forms';
 export class CepAddComponent implements OnInit {
   ceps = this.cepbankservice.getCeps();
 
+  cep: Cep | undefined;
+
   constructor(
     private cepbankservice: CepbankService,
     private formBuilder: FormBuilder
   ) {}
 
   checkoutForm = this.formBuilder.group({
-    id: '',
-     cep: '',
+    campo: '',
     logradouro: '',
     complemento: '',
     bairro: '',
@@ -72,5 +73,19 @@ export class CepAddComponent implements OnInit {
     return true;
   }
 
-  addCep() {}
+  addCep() {
+    ceps.push({
+      id: 1,
+      campo: document.getElementById('cep1').toString(),
+      logradouro: document.getElementById('cep2').toString(),
+      complemento: document.getElementById('cep3').toString(),
+      bairro: document.getElementById('cep4').toString(),
+      localidade: document.getElementById('cep5').toString(),
+      uf: document.getElementById('cep6').toString(),
+      ibge: document.getElementById('cep7').toString(),
+      gia: document.getElementById('cep8').toString(),
+      ddd: document.getElementById('cep9').toString(),
+      siafi: document.getElementById('cepa').toString(),
+    });
+  }
 }
