@@ -2,7 +2,7 @@
 
 <h2>CEPS</h2>
 
-<div class="cep" *ngFor="let cep of ceps | async">
+<div class="cep" *ngIf="valido(cep)" *ngFor="let cep of ceps | async">
   <span>{{ cep.campo | currency }}</span>
   <span>{{ cep.logradouro | currency }}</span>
   <span>{{ cep.complemento | currency }}</span>
