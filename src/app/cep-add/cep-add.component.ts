@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgIterable, OnInit } from '@angular/core';
 import { CepbankService } from '../cepbank.service';
 import { Cep, ceps } from '../ceps';
 import { FormBuilder } from '@angular/forms';
@@ -76,16 +76,16 @@ export class CepAddComponent implements OnInit {
   }
 
   addCep(
-    a: string,
-    b: string,
-    c: string,
-    d: string,
-    e: string,
-    f: string,
-    g: string,
-    h: string,
-    i: string,
-    j: string
+    a: String,
+    b: String,
+    c: String,
+    d: String,
+    e: String,
+    f: String,
+    g: String,
+    h: String,
+    i: String,
+    j: String
   ) {
     var aux = {
       campo: a,
@@ -100,6 +100,6 @@ export class CepAddComponent implements OnInit {
       siafi: j,
     };
 
-    return this.http.post<typeof aux>('/ceps', typeof aux);
+    return this.http.post<Cep>('/assets/ceps.json', typeof aux);
   }
 }

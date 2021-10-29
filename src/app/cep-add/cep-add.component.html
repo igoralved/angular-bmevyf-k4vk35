@@ -2,44 +2,62 @@
 
 <form (ngSubmit)="onSubmit()">
   <div>
-    <label for="cep1">campo</label>
-    <input id="cep1" type="text" name="cep1" #cep1 />
+    <label for="campo">campo</label>
+    <input id="campo" type="text" name="campo" #campo />
   </div>
   <div>
-    <label for="cep2">logradouro</label>
-    <input id="cep2" type="text" name="cep2" #cep2 />
+    <label for="logradouro">logradouro</label>
+    <input id="logradouro" type="text" name="logradouro" #logradouro />
   </div>
   <div>
-    <label for="cep3">complemento</label>
-    <input id="cep3" type="text" name="cep3" #cep3 />
+    <label for="complemento">complemento</label>
+    <input id="complemento" type="text" name="complemento" #complemento />
   </div>
   <div>
-    <label for="cep4">bairro</label>
-    <input id="cep4" type="text" name="cep4" #cep4 />
+    <label for="bairro">bairro</label>
+    <input id="bairro" type="text" name="bairro" #bairro />
   </div>
   <div>
-    <label for="cep5">localidade</label>
-    <input id="cep5" type="text" name="cep5" #cep5 />
+    <label for="localidade">localidade</label>
+    <input id="localidade" type="text" name="localidade" #localidade />
   </div>
   <div>
-    <label for="cep6">uf</label>
-    <input id="cep6" type="text" name="cep6" #cep6 />
+    <label for="uf">uf</label>
+    <input id="uf" type="text" name="uf" #uf />
   </div>
   <div>
-    <label for="cep7">ibge</label>
-    <input id="cep7" type="text" name="cep7" #cep7 />
+    <label for="ibge">ibge</label>
+    <input id="ibge" type="text" name="ibge" #ibge />
   </div>
   <div>
-    <label for="cep8">gia</label>
-    <input id="cep8" type="text" name="cep8" #cep8 />
+    <label for="gia">gia</label>
+    <input id="gia" type="text" name="gia" #gia />
   </div>
   <div>
-    <label for="cep9">ddd</label>
-    <input id="cep9" type="text" name="cep9" #cep9 />
+    <label for="ddd">ddd</label>
+    <input id="ddd" type="text" name="ddd" #ddd />
   </div>
   <div>
-    <label for="cepa">siafi</label>
-    <input id="cepa" type="text" name="cepa" #cepa />
+    <label for="siafi">siafi</label>
+    <input id="siafi" type="text" name="siafi" #siafi />
   </div>
-  <button class="button">Register</button>
+  <button
+    class="button"
+    (click)="
+      addCep(
+        campo.toString(),
+        logradouro.toString(),
+        complemento.toString(),
+        bairro.toString(),
+        localidade.toString(),
+        uf.toString(),
+        ibge.toString(),
+        gia.toString(),
+        ddd.toString(),
+        siafi.toString()
+      )
+    "
+  >
+    Register
+  </button>
 </form>
