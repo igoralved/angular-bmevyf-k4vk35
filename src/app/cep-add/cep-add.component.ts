@@ -74,4 +74,32 @@ export class CepAddComponent implements OnInit {
     }
     return true;
   }
+
+  addCep(
+    a: string,
+    b: string,
+    c: string,
+    d: string,
+    e: string,
+    f: string,
+    g: string,
+    h: string,
+    i: string,
+    j: string
+  ) {
+    var aux = {
+      campo: a,
+      logradouro: b,
+      complemento: c,
+      bairro: d,
+      localidade: e,
+      uf: f,
+      ibge: g,
+      gia: h,
+      ddd: i,
+      siafi: j,
+    };
+
+    return this.http.post<typeof aux>('/ceps', typeof aux);
+  }
 }

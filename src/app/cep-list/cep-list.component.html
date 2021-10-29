@@ -5,14 +5,14 @@
 <div class="cep" *ngFor="let cep of ceps | async">
   <div *ngIf="valido(cep)">
     <h3>{{ cep.campo }}</h3>
-    <h2>{{ cep.logradouro }}</h2>
-    <h2>{{ cep.complemento }}</h2>
-    <h2>{{ cep.bairro }}</h2>
-    <h2>{{ cep.localidade }}</h2>
-    <h2>{{ cep.uf }}</h2>
-    <h2>{{ cep.ibge }}</h2>
-    <h2>{{ cep.gia }}</h2>
-    <h2>{{ cep.ddd }}</h2>
-    <h2>{{ cep.siafi }}</h2>
+    <h2>logradouro = {{ cep.logradouro }}</h2>
+    <h2>complemento = {{ cep.complemento }}</h2>
+    <h2>bairro = {{ cep.bairro }}</h2>
+    <h2>localidade = {{ cep.localidade }}</h2>
+    <h2>uf = {{ cep.uf }}</h2>
+    <h2>ibge = {{ cep.ibge }}</h2>
+    <h2>gia = {{ cep.gia }}</h2>
+    <h2>ddd = {{ cep.ddd }}</h2>
+    <h2>siafi = {{ cep.siafi }}</h2>
   </div>
 </div>
