@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cep-add.component.css'],
 })
 export class CepAddComponent implements OnInit {
-  ceps = this.cepbankservice.getCeps();
+  ceps = this.cepbankservice.getAll();
 
   cep: Cep | undefined;
 
@@ -100,6 +100,9 @@ export class CepAddComponent implements OnInit {
       siafi: j,
     };
 
-    return this.http.post<Cep>('/assets/ceps.json', typeof aux);
+    return this.http.post<NgIterable<any> | null | undefined>(
+      '/assets/ceps.json',
+      aux
+    );
   }
 }
