@@ -2,15 +2,17 @@
 
 <h2>CEPS</h2>
 
-<div class="cep" *ngIf="valido(cep)" *ngFor="let cep of ceps | async">
-  <span>{{ cep.campo | currency }}</span>
-  <span>{{ cep.logradouro | currency }}</span>
-  <span>{{ cep.complemento | currency }}</span>
-  <span>{{ cep.bairro | currency }}</span>
-  <span>{{ cep.localidade | currency }}</span>
-  <span>{{ cep.uf | currency }}</span>
-  <span>{{ cep.ibge | currency }}</span>
-  <span>{{ cep.gia | currency }}</span>
-  <span>{{ cep.ddd | currency }}</span>
-  <span>{{ cep.siafi | currency }}</span>
+<div class="cep" *ngFor="let cep of ceps | async">
+  <div *ngIf="valido(cep)">
+    <h3>{{ cep.campo }}</h3>
+    <h2>{{ cep.logradouro }}</h2>
+    <h2>{{ cep.complemento }}</h2>
+    <h2>{{ cep.bairro }}</h2>
+    <h2>{{ cep.localidade }}</h2>
+    <h2>{{ cep.uf }}</h2>
+    <h2>{{ cep.ibge }}</h2>
+    <h2>{{ cep.gia }}</h2>
+    <h2>{{ cep.ddd }}</h2>
+    <h2>{{ cep.siafi }}</h2>
+  </div>
 </div>

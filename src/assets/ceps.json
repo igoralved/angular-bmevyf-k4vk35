@@ -11,5 +11,31 @@
     "gia": "1004",
     "ddd": "11",
     "siafi": "7107"
+  },
+  {
+    "id": 2,
+    "campo": "010010001",
+    "logradouro": "Nenhum",
+    "complemento": "Nenhum",
+    "bairro": "Nenhum",
+    "localidade": "Nenhum",
+    "uf": "Nenhum",
+    "ibge": "0",
+    "gia": "0",
+    "ddd": "0",
+    "siafi": "0"
+  },
+  {
+    "id": 3,
+    "campo": "12345678",
+    "logradouro": "Porto Alegre",
+    "complemento": "lado par",
+    "bairro": "Moinhos de Vento",
+    "localidade": "Porto Alegre",
+    "uf": "RS",
+    "ibge": "12344321",
+    "gia": "2000",
+    "ddd": "10",
+    "siafi": "3000"
   }
 ]
