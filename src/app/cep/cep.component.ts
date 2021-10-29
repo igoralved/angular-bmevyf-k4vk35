@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CepbankService } from '../cepbank.service';
 
 @Component({
   selector: 'app-cep',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cep.component.css'],
 })
 export class CepComponent implements OnInit {
-  constructor() {}
+  ceplist = this.ceps.getAll();
+  constructor(private ceps: CepbankService) {}
 
+
+  
   ngOnInit() {}
 }

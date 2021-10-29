@@ -2,10 +2,15 @@
 
 <h2>CEPS</h2>
 
-<div *ngFor="let cep of ceps">
-  <h3 *ngIf="valido(cep)">
-    <a [title]="cep.campo" [routerLink]="['/ceps', cep.id]">
-      {{ cep.campo }}
-    </a>
-  </h3>
+<div class="cep" *ngFor="let cep of ceps | async">
+  <span>{{ cep.campo | currency }}</span>
+  <span>{{ cep.logradouro | currency }}</span>
+  <span>{{ cep.complemento | currency }}</span>
+  <span>{{ cep.bairro | currency }}</span>
+  <span>{{ cep.localidade | currency }}</span>
+  <span>{{ cep.uf | currency }}</span>
+  <span>{{ cep.ibge | currency }}</span>
+  <span>{{ cep.gia | currency }}</span>
+  <span>{{ cep.ddd | currency }}</span>
+  <span>{{ cep.siafi | currency }}</span>
 </div>

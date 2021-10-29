@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { range } from 'rxjs';
+import { Observable, range } from 'rxjs';
 import { CepbankService } from '../cepbank.service';
 import { Cep, ceps } from '../ceps';
 @Component({
@@ -9,7 +9,6 @@ import { Cep, ceps } from '../ceps';
 })
 export class CepListComponent {
   ceps = this.ceplist.getAll();
-
   constructor(private ceplist: CepbankService) {}
 
   valido(cep: Cep) {

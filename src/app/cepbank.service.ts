@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, NgIterable } from '@angular/core';
 import { Cep, ceps } from './ceps';
 @Injectable({ providedIn: 'root' })
 export class CepbankService {
@@ -21,6 +21,21 @@ export class CepbankService {
   }
 
   getAll() {
-    return this.http.get<Cep[]>('/ceps');
+    /*return this.http.get<{
+      id: number;
+      campo: string;
+      logradouro: string;
+      complemento: string;
+      bairro: string;
+      localidade: string;
+      uf: string;
+      ibge: string;
+      gia: string;
+      ddd: string;
+      siafi: string;
+    }>('/assets/ceps.json');*/
+    return this.http.get<NgIterable<any> | null | undefined>(
+      '/assets/ceps.json'
+    );
   }
 }
