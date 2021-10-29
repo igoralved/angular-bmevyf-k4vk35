@@ -4,7 +4,7 @@
   <h3></h3>
   <div>
     <label for="cep">campo</label>
-    <input id="cep1" type="text" name="cep" #cep />
+    <input id="cep1" type="text" name="campo" #cep1 />
   </div>
   <div>
     <label for="cep">logradouro</label>
@@ -42,5 +42,5 @@
     <label for="cep">siafi</label>
     <input id="cepa" type="text" name="cep" #cep />
   </div>
-  <button class="button">Register</button>
+  <button class="button" (click)="addCep()">Register</button>
 </form>

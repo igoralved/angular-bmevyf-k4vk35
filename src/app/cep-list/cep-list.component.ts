@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { range } from 'rxjs';
+import { CepbankService } from '../cepbank.service';
 import { Cep, ceps } from '../ceps';
 @Component({
   selector: 'app-cep-list',
@@ -7,7 +8,9 @@ import { Cep, ceps } from '../ceps';
   styleUrls: ['./cep-list.component.css'],
 })
 export class CepListComponent {
-  ceps = ceps;
+  ceps = this.ceplist.getAll();
+
+  constructor(private ceplist: CepbankService) {}
 
   valido(cep: Cep) {
     if (cep.campo.length != 8) {

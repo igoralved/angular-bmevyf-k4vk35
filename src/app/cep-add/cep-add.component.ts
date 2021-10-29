@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CepbankService } from '../cepbank.service';
 import { Cep, ceps } from '../ceps';
 import { FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cep-add',
@@ -14,6 +15,7 @@ export class CepAddComponent implements OnInit {
   cep: Cep | undefined;
 
   constructor(
+    private http: HttpClient,
     private cepbankservice: CepbankService,
     private formBuilder: FormBuilder
   ) {}
@@ -71,21 +73,5 @@ export class CepAddComponent implements OnInit {
       }
     }
     return true;
-  }
-
-  addCep() {
-    ceps.push({
-      id: 1,
-      campo: document.getElementById('cep1').toString(),
-      logradouro: document.getElementById('cep2').toString(),
-      complemento: document.getElementById('cep3').toString(),
-      bairro: document.getElementById('cep4').toString(),
-      localidade: document.getElementById('cep5').toString(),
-      uf: document.getElementById('cep6').toString(),
-      ibge: document.getElementById('cep7').toString(),
-      gia: document.getElementById('cep8').toString(),
-      ddd: document.getElementById('cep9').toString(),
-      siafi: document.getElementById('cepa').toString(),
-    });
   }
 }

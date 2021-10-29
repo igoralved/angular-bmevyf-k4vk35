@@ -19,4 +19,8 @@ export class CepbankService {
     this.ceps = [];
     return this.ceps;
   }
+
+  getAll() {
+    return this.http.get<Cep[]>('/ceps');
+  }
 }
