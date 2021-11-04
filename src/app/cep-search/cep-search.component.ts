@@ -65,12 +65,8 @@ export class CepSearchComponent implements OnInit {
     return true;
   }
 
-  getCep(cep: String) {
-    for (var i = 0; i < ceps.length; i++) {
-      if (cep == ceps[i].id.toString() && this.valido(ceps[i])) {
-        this.route.navigate(['/ceps', cep]);
-      }
-    }
+  getCep(id: string) {
+    this.route.navigate(['ceps', this.cepbankService.getById(id)]);
   }
 
   GoToAddCep() {

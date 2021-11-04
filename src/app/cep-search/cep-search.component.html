@@ -2,11 +2,11 @@
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <div>
-    <label for="cep"> Id </label>
-    <input id="cep" type="text" name="cep" #cep />
+    <label for="id"> Id </label>
+    <input id="id" type="text" name="id" #id />
   </div>
 
-  <button class="button" (click)="getCep(cep.value)">Search</button>
+  <button class="button" (click)="getCep(id.value)">Search</button>
 </form>
 
 <h3></h3>
