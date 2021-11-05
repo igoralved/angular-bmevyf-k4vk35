@@ -36,10 +36,6 @@ export class CepbankService {
   }
 
   getByCampo(campo: string): Observable<Cep> {
-    let url = '/assets/ceps.json/?name=${campo}';
-    return this.http.get<Cep>(url).pipe(
-      map((c) => c),
-      catchError((e) => this.mostraerro(e))
-    );
+    return this.http.get<Cep>('https://viacep.com.br/ws/' + campo + '/json/');
   }
 }

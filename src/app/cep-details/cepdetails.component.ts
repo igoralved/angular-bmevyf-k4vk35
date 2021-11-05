@@ -22,7 +22,6 @@ export class CepdetailsComponent implements OnInit {
     this.cepbank
       .getByCampo(cepCampoFromRoute)
       .subscribe((cep) => (this.cep = cep));
-    window.alert(this.cep);
   }
 
   addToBank(cep: Cep) {
