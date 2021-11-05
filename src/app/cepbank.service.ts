@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, NgIterable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Cep, ceps } from './ceps';
 @Injectable({ providedIn: 'root' })
 export class CepbankService {
@@ -21,11 +22,24 @@ export class CepbankService {
     return this.ceps;
   }
 
+  showErrorMessage() {
+    window.alert('Campo inválido ou não encontrado!');
+  }
+
+  mostraerro(e: any): Observable<any> {
+    this.showErrorMessage();
+    return EMPTY;
+  }
+
   getAll(): Observable<Cep[]> {
     return this.http.get<Cep[]>('/assets/ceps.json');
   }
 
-  getById(id: String): Observable<Cep[]> {
-    return this.http.get<Cep[]>('/assets/ceps/?name=${' + id + '}');
+  getByCampo(campo: String): Observable<Cep> {
+    let url = '/assets/ceps.json/?name=${campo}';
+    return this.http.get<Cep>(url).pipe(
+      map((c) => c),
+      catchError((e) => this.mostraerro(e))
+    );
   }
 }

@@ -14,10 +14,10 @@ export class CepdetailsComponent implements OnInit {
   ngOnInit() {
     // First get the cep id from the current route.
     const routeParams = this.route.snapshot.paramMap;
-    const cepIdFromRoute = Number(routeParams.get('cepId'));
+    const cepCampoFromRoute = Number(routeParams.get('cepCampo'));
 
-    // Find the cep that correspond with the id provided in route.
-    this.cep = ceps.find((cep) => cep.id === cepIdFromRoute);
+    // Find the cep that correspond with the 'campo' provided in route.
+    this.cep = ceps.find((cep) => cep.id === cepCampoFromRoute);
   }
 
   addToBank(cep: Cep) {

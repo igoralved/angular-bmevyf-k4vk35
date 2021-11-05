@@ -20,7 +20,7 @@ import { CepAddComponent } from './cep-add/cep-add.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'ceps', component: CepListComponent },
-      { path: 'ceps/:cepId', component: CepdetailsComponent },
+      { path: 'ceps/:cepCampo', component: CepdetailsComponent },
       { path: '', component: CepSearchComponent },
       { path: 'add', component: CepAddComponent },
     ]),

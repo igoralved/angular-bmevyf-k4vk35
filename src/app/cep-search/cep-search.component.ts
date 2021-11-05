@@ -15,7 +15,7 @@ export class CepSearchComponent implements OnInit {
   ceps = this.cepbankService.getCeps();
 
   checkoutForm = this.formBuilder.group({
-    id: '',
+    campo: '',
   });
 
   constructor(
@@ -32,12 +32,12 @@ export class CepSearchComponent implements OnInit {
     this.checkoutForm.reset();
   }
 
-  valido(cep: Cep) {
-    if (cep.campo.length != 8) {
+  valido(campo: string) {
+    if (campo.length != 8) {
       return false;
     }
-    for (var i = 0; i < cep.campo.length; i++) {
-      switch (cep.campo[i]) {
+    for (var i = 0; i < campo.length; i++) {
+      switch (campo[i]) {
         case '0':
           break;
         case '1':
@@ -65,8 +65,10 @@ export class CepSearchComponent implements OnInit {
     return true;
   }
 
-  getCep(id: string) {
-    this.route.navigate(['ceps', this.cepbankService.getById(id)]);
+  getCep(campo: string) {
+    if (this.valido(campo)) {
+      this.route.navigate(['ceps/', campo]);
+    }
   }
 
   GoToAddCep() {
