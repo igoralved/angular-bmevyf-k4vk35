@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
+import { mapTo } from 'rxjs/operators';
 import { CepdetailsComponent } from '../cep-details/cepdetails.component';
 import { CepListComponent } from '../cep-list/cep-list.component';
 import { CepbankService } from '../cepbank.service';
@@ -67,7 +69,7 @@ export class CepSearchComponent implements OnInit {
 
   getCep(campo: string) {
     if (this.valido(campo)) {
-      this.route.navigate(['ceps/', campo]);
+      this.route.navigate(['/ceps', campo]);
     }
   }
 

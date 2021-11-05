@@ -35,7 +35,7 @@ export class CepbankService {
     return this.http.get<Cep[]>('/assets/ceps.json');
   }
 
-  getByCampo(campo: String): Observable<Cep> {
+  getByCampo(campo: string): Observable<Cep> {
     let url = '/assets/ceps.json/?name=${campo}';
     return this.http.get<Cep>(url).pipe(
       map((c) => c),

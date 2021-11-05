@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cep, ceps } from '../ceps';
 import { CepbankService } from '../cepbank.service';
+
 @Component({
   selector: 'app-cepdetails',
   templateUrl: './cepdetails.component.html',
@@ -14,10 +15,14 @@ export class CepdetailsComponent implements OnInit {
   ngOnInit() {
     // First get the cep id from the current route.
     const routeParams = this.route.snapshot.paramMap;
-    const cepCampoFromRoute = Number(routeParams.get('cepCampo'));
+    const cepCampoFromRoute = String(routeParams.get('cepCampo'));
 
     // Find the cep that correspond with the 'campo' provided in route.
-    this.cep = ceps.find((cep) => cep.id === cepCampoFromRoute);
+
+    this.cepbank
+      .getByCampo(cepCampoFromRoute)
+      .subscribe((cep) => (this.cep = cep));
+    window.alert(this.cep);
   }
 
   addToBank(cep: Cep) {
